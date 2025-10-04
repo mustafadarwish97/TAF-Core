@@ -34,10 +34,6 @@ jobs:
           with:
               maven-version: 3.9.9
 
-        - name: Configure Git credentials for private repo
-          run: |
-            git config --global url."https://${{ secrets.TAF_CORE_TOKEN }}@github.com/".insteadOf "https://github.com/"
-
         - name: Running Tests
           continue-on-error: true
           run: mvn -Dtest="${TARGET}" -DexecutionType="LocalHeadless" -Dextensions="disabled" -DbrowserType="Chrome" clean test
@@ -66,10 +62,6 @@ jobs:
           uses: stCarolas/setup-maven@v5
           with:
             maven-version: 3.9.9
-            
-        - name: Configure Git credentials for private repo
-          run: |
-            git config --global url."https://${{ secrets.TAF_CORE_TOKEN }}@github.com/".insteadOf "https://github.com/"
 
         - name: Running Tests
           continue-on-error: true
