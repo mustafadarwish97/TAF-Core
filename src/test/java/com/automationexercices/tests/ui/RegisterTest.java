@@ -32,6 +32,13 @@ public class RegisterTest extends BaseTest {
 
     }
 
+    //Tests
+    @Description("Verify user can sign up with valid data")
+    @Test
+    public void invalidSignUpTC() {
+
+    }
+
 
 
 
